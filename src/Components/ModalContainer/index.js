@@ -3,10 +3,13 @@ import React, {
 	useEffect,
 	useRef,
 } from "react";
+import PropTypes from "prop-types";
+import TileModalChild from "./TileModalChild";
 
 function ModalContainer({
 	showModal,
 	setShowModal,
+	contentId,
 }) {
 	const modalRef = useRef();
 
@@ -37,27 +40,28 @@ function ModalContainer({
 
 	return (
 		<>
+			<h1>Modal </h1>
 			{showModal ? (
 				<div
 					ref={modalRef}
 					onClick={closeModal}
 					className="modalContent"
+					onKeyDown={closeModal}
+					role="button"
+					tabIndex={0}
 				>
-					{/* <div>
-						<p
-							onClick={() =>
-								setShowModal((prev) => !prev)
-							}
-						>
-							{" "}
-							Close{" "}
-						</p>
-					</div> */}
+					<TileModalChild contentId={contentId} />
 					<div />
 				</div>
 			) : null}
 		</>
 	);
 }
+
+ModalContainer.propTypes = {
+	showModal: PropTypes.bool.isRequired,
+	setShowModal: PropTypes.func.isRequired,
+	contentId: PropTypes.string.isRequired,
+};
 
 export default ModalContainer;
