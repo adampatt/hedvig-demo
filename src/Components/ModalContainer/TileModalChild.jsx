@@ -3,8 +3,12 @@ import React, {
 	useState,
 } from "react";
 import PropTypes from "prop-types";
+import { capitalize } from "../../utils";
 
-function TileModalChild({ contentId }) {
+function TileModalChild({
+	contentId,
+	closeModal,
+}) {
 	const [info, setInfo] = useState([]);
 	const [updatedContentId, setUpdatedContentId] =
 		useState(contentId);
@@ -25,7 +29,10 @@ function TileModalChild({ contentId }) {
 	}, [updatedContentId]);
 
 	return (
-		<>
+		<div className="TileModal">
+			<button type="button" onClick={closeModal}>
+				CLOSE
+			</button>
 			<div className="TileModalChildHead">
 				<button
 					type="button"
@@ -34,7 +41,7 @@ function TileModalChild({ contentId }) {
 				>
 					left
 				</button>
-				<h2>TiTLE {info.title}</h2>
+				<h2>{capitalize(info.title)}</h2>
 				<button
 					type="button"
 					onClick={incrementContentId}
@@ -50,16 +57,17 @@ function TileModalChild({ contentId }) {
 				<hr />
 				<ul>
 					{info.subpoint?.map((i) => (
-						<li>{i}</li>
+						<li>{capitalize(i)}</li>
 					))}
 				</ul>
 			</div>
-		</>
+		</div>
 	);
 }
 
 TileModalChild.propTypes = {
 	contentId: PropTypes.number.isRequired,
+	closeModal: PropTypes.func.isRequired,
 };
 
 export default TileModalChild;

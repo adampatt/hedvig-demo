@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { TileButton } from "./TileStyles";
 
 function TileIndividual({
 	id,
@@ -7,14 +8,14 @@ function TileIndividual({
 	onClickHandler,
 }) {
 	return (
-		<button
+		<TileButton
 			type="button"
 			onClick={onClickHandler}
 			key={id}
 		>
 			<p>{id}</p>
 			<p>{title}</p>
-		</button>
+		</TileButton>
 	);
 }
 

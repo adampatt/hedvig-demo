@@ -1,10 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {
+	SectionContainer,
+	XlContainer,
+} from "../../../Styles/ContainerStyles";
 
 function About({ data }) {
 	return (
-		<section className="aboutContainer">
-			<div className="headerContentContainer">
+		<SectionContainer>
+			<XlContainer img="../../../Assets/wide1.jpg">
 				{data.map((d) => (
 					<>
 						<h1>{d.aboutTitle}</h1>
@@ -12,8 +16,8 @@ function About({ data }) {
 						<button type="button">Get a quote</button>
 					</>
 				))}
-			</div>
-		</section>
+			</XlContainer>
+		</SectionContainer>
 	);
 }
 

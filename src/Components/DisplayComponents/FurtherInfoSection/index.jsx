@@ -8,12 +8,16 @@ function FurtherInfoSection({ data }) {
 			<div className="furtherInfoContentContainer">
 				{displayData.map((d) => (
 					<>
-						<h2>{d.heading}</h2>
-						<p>{d.text}</p>
+						<div className="textSide">
+							<h2>{d.heading}</h2>
+							<p>{d.text}</p>
+						</div>
+						<div>
+							<img src={d.img} alt={d.alt} />
+						</div>
 					</>
 				))}
 			</div>
-			<div> IMAGE</div>
 		</section>
 	);
 }

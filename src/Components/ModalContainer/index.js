@@ -5,6 +5,7 @@ import React, {
 } from "react";
 import PropTypes from "prop-types";
 import TileModalChild from "./TileModalChild";
+import "./styles.css";
 
 function ModalContainer({
 	showModal,
@@ -17,6 +18,10 @@ function ModalContainer({
 		if (e.target === modalRef.current) {
 			setShowModal(false);
 		}
+	};
+
+	const closeModalIcon = () => {
+		setShowModal(false);
 	};
 
 	const keyPress = useCallback(
@@ -50,7 +55,10 @@ function ModalContainer({
 					role="button"
 					tabIndex={0}
 				>
-					<TileModalChild contentId={contentId} />
+					<TileModalChild
+						contentId={contentId}
+						closeModal={closeModalIcon}
+					/>
 					<div />
 				</div>
 			) : null}
