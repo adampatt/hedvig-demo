@@ -40,3 +40,8 @@ export const SmallSectionTitle = styled.div`
 	justify-content: center;
 	padding-bottom: 5em;
 `;
+
+export const HalfWidthContainer = styled.div`
+	display: flex;
+	width: 50%;
+`;
