@@ -3,18 +3,24 @@ import React, {
 	useState,
 } from "react";
 import "./App.css";
-// import QuestionContainer from "../Question";
-// import Tile from "../Tile";
-// import Header from "../Header";
-// import About from "../DisplayComponents/About";
-// import InfoSection from "../DisplayComponents/InfoSection";
+import QuestionContainer from "../Question";
+import Tile from "../Tile";
+import About from "../DisplayComponents/About";
+import InfoSection from "../DisplayComponents/InfoSection";
 import FurtherInfoSection from "../DisplayComponents/FurtherInfoSection";
-// import Pricing from "../DisplayComponents/Pricing";
+import Pricing from "../DisplayComponents/Pricing";
+import Header from "../Header";
 // import Footer from "../Footer";
 
 function App() {
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(true);
+	const [navBarShow, setNavBarShow] =
+		useState(false);
+
+	const displayNavBar = () => {
+		setNavBarShow(!navBarShow);
+	};
 
 	useEffect(() => {
 		const controller = new AbortController();
@@ -28,21 +34,22 @@ function App() {
 	}, []);
 	return (
 		<div className="App">
-			<h1>App component</h1>
-			{/* <Header /> */}
-			{/* <Tile /> */}
-			{/* <QuestionContainer /> */}
+			<Header
+				handleNavBar={displayNavBar}
+				navBarState={navBarShow}
+			/>
+			<Tile />
+			<QuestionContainer />
 			{loading ? (
 				<div>Loading...</div>
 			) : (
 				<>
 					<FurtherInfoSection data={data} />
-					{/* <Pricing data={data} /> */}
-					{/* <About data={data} /> */}
-					{/* <InfoSection data={data} />
-					
-					
-					<Footer data={data} /> */}
+					<Pricing data={data} />
+					<About data={data} />
+					<InfoSection data={data} />
+
+					{/* <Footer data={data} /> */}
 				</>
 			)}
 		</div>

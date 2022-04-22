@@ -4,18 +4,25 @@ import {
 	SectionContainer,
 	XlContainer,
 } from "../../../Styles/ContainerStyles";
+import {
+	AboutSectionContainer,
+	AboutDataContainer,
+} from "./AboutStyles";
 
 function About({ data }) {
+	const backgroundImage = data[0].aboutImg;
 	return (
 		<SectionContainer>
-			<XlContainer img="../../../Assets/wide1.jpg">
-				{data.map((d) => (
-					<>
-						<h1>{d.aboutTitle}</h1>
-						<p>{d.aboutCopy}</p>
-						<button type="button">Get a quote</button>
-					</>
-				))}
+			<XlContainer img={backgroundImage}>
+				<AboutSectionContainer>
+					{data.map((d) => (
+						<AboutDataContainer>
+							<h1>{d.aboutTitle}</h1>
+							<p>{d.aboutCopy}</p>
+							<button type="button">Get a quote</button>
+						</AboutDataContainer>
+					))}
+				</AboutSectionContainer>
 			</XlContainer>
 		</SectionContainer>
 	);

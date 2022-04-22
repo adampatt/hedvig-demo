@@ -1,115 +1,42 @@
 [
 	{
-		"createdAt": "2022-04-20T22:33:42.814Z",
-		"aboutTitle": "aperiam quibusdam nesciunt",
-		"aboutCopy": "Sit alias nesciunt assumenda dolor alias et. Et dolor dolor aperiam ut placeat rerum ipsa. Non et enim eligendi ab voluptatem. Rerum laboriosam non natus voluptas illum ullam quia dolor tempora. Cum quia sit quo praesentium quas.\n \rEx aut laboriosam quos veritatis et consectetur repudiandae. Est qui et mollitia tenetur eaque distinctio. Voluptas delectus autem. Molestiae a aut dolor. Suscipit expedita molestiae molestiae sint saepe. Eum dolorem sint harum.\n \rDucimus similique vitae voluptatem qui dolor voluptatem porro ipsa molestias. Esse ducimus ea accusamus est earum unde fuga. Qui vero officiis neque facilis aut a aut. Laboriosam quia consequatur. Sed quod explicabo.",
-		"infoTitle": "Est ipsam explicabo",
-		"infoBlurb": "Erum laboriosam non natus voluptas illum ullam quia dolor tempora. Cum quia sit quo praesentium quas. Ex aus.",
-		"infoImage": "https://i.ibb.co/SK1HKqM/wide3.jpg",
-		"infoImageAlt": "Boot of old green car",
-		"infoData": [
-			{
-				"heading": "Eum dolorem sint",
-				"text": "Molestiae a aut dolor. Suscipit expedita molestiae molestiae sint saepe. Eum dolorem sint harum. Ducimus similique vitae voluptatem qui dolor voluptatem porro"
-			},
-			{
-				"heading": "Renetur autem eum",
-				"text": "Erum laboriosam non natus voluptas illum ullam quia dolor tempora. Cum quia sit quo praesentium quas. Ex aus"
-			},
-			{
-				"heading": "Sit alias nesciun",
-				"text": "Molestiae a aut dolor. Suscipit expedita molestiae molestiae sint saepe. Eum dolorem sint harum. Ducimus similique vitae voluptatem qui dolor voluptatem porro"
-			},
-			{
-				"heading": "Sum quia sit quo",
-				"text": "Est qui et mollitia tenetur eaque distinctio. Voluptas delectus autem. Molestiae a aut dolor. Suscipit expedita molestiae molestiae sint saepe. Eum dolorem sint harum.Ducimus similique vitae voluptatem qui dolor voluptatem porro ipsa molestias. Esse ducimus ea accusamus est earum unde fuga."
-			}
-		],
-		"aboutImg": "about-img 1",
-		"furtherInfo": [
-			{
-				"heading": "Eum dolorem sint",
-				"text": "Molestiae a aut dolor. Suscipit expedita molestiae molestiae sint saepe. Eum dolorem sint harum. Ducimus similique vitae voluptatem qui dolor voluptatem porro",
-				"img": "https://i.ibb.co/qFQQpBK/portrait2.jpg",
-				"alt": "Old car grey car "
-			},
-			{
-				"heading": "Renetur autem eum",
-				"text": "Erum laboriosam non natus voluptas illum ullam quia dolor tempora. Cum quia sit quo praesentium quas. Ex aus",
-				"img": "https://i.ibb.co/k18WJqC/portrait1.jpg",
-				"alt": "Inside of old car"
-			},
-			{
-				"heading": "Sit alias nesciun",
-				"text": "Molestiae a aut dolor. Suscipit expedita molestiae molestiae sint saepe. Eum dolorem sint harum. Ducimus similique vitae voluptatem qui dolor voluptatem porro",
-				"img": "https://i.ibb.co/0mmTDfV/portrait3.jpg",
-				"alt": "Two women sitting in the boot of an old car"
-			},
-			{
-				"heading": "Sum quia sit quo",
-				"text": "Est qui et mollitia tenetur eaque distinctio. Voluptas delectus autem. Molestiae a aut dolor. Suscipit expedita molestiae molestiae sint saepe. Eum dolorem sint harum.Ducimus similique vitae voluptatem qui dolor voluptatem porro ipsa molestias. Esse ducimus ea accusamus est earum unde fuga.",
-				"img": "https://i.ibb.co/G9FvH7n/portrait4.jpg",
-				"alt": "old silver car driving down country road"
-			}
-		],
-		"footerContent": [
-			{
-				"heading": "Lorem",
-				"list": [
-					"Lorem ipsum dolor",
-					"Consectetur adipisicing",
-					"elit",
-					"Quisquam",
-					"quos lorem",
-					"ipsum dolor sit",
-					"amet",
-					"consectetur adipisicing",
-					"elit",
-					"Quisquam",
-					"quo"
-				]
-			},
-			{
-				"heading": "Ipsum",
-				"list": [
-					"Quisquam",
-					"quos lorem",
-					"ipsum dolor sit",
-					"amet",
-					"consectetur adipisicing",
-					"elit",
-					"Quisquam",
-					"quo"
-				]
-			},
-			{
-				"heading": "Dolorem",
-				"list": [
-					"Consectetur adipisicing",
-					"elit",
-					"Quisquam",
-					"quos lorem",
-					"ipsum dolor sit",
-					"amet",
-					"consectetur adipisicing",
-					"elit",
-					"Quisquam",
-					"quo",
-					"consectetur quo"
-				]
-			},
-			{
-				"heading": "Elit",
-				"list": [
-					"Molestiae a aut",
-					"Lorem ipsum dolor",
-					"Consectetur adipisicing",
-					"elit",
-					"Quisquam",
-					"quo"
-				]
-			}
-		],
-		"id": "1"
+		"heading": "Loremse Isas",
+		"list": [
+			"one",
+			"two",
+			"three",
+			"four",
+			"five",
+			"six",
+			"seven"
+		]
+	},
+	{
+		"heading": "Bila Peara",
+		"list": [
+			"one",
+			"two",
+			"three",
+			"four",
+			"five",
+			"six",
+			"seven",
+			"eight"
+		]
+	},
+	{
+		"heading": "Loase Pale",
+		"list": [
+			"one",
+			"two",
+			"three",
+			"four",
+			"five",
+			"six"
+		]
+	},
+	{
+		"heading": "Ceasl lil",
+		"list": ["one", "two", "three", "four"]
 	}
 ]
