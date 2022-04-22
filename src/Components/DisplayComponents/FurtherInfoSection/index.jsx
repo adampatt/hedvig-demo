@@ -20,8 +20,10 @@ function FurtherInfoSection({ data }) {
 		<SectionContainer>
 			<LargeContainer>
 				<FurtherInfoContainer>
-					{displayData.map((d) => (
-						<FurtherInfoContent>
+					{displayData.map((d, index) => (
+						<FurtherInfoContent
+							rowDirection={index % 2 === 0}
+						>
 							<HalfWidthContainer>
 								<FurtherInfoText>
 									<h2>{d.heading}</h2>

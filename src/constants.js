@@ -6,3 +6,8 @@ export const Breakpoints = {
 	xl: 1200,
 	xxl: 2400,
 };
+
+export const FlexRowDisplay = [
+	"row-reverse",
+	"row",
+];

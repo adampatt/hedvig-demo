@@ -15,6 +15,8 @@ export const FurtherInfoText = styled.div`
 	justify-content: space-evenly;
 `;
 
+// NEED TO REVERSE EACH LINE
+// FADE IN WORKING In codesandbox
 export const FurtherInfoImage = styled.img`
 	max-width: 100%;
 	align-self: center;
@@ -38,10 +40,9 @@ export const ImageContainer = styled.div`
 `;
 
 export const FurtherInfoContent = styled.div`
+	background-color: #f7f7f7;
 	display: flex;
-	border: 1px solid black;
 	padding: 3em 0 3em 0;
-	div:nth-child(odd) {
-		background: tomato;
-	}
+	flex-direction: ${(props) =>
+		props.rowDirection ? "row" : "row-reverse"};
 `;
