@@ -6,6 +6,7 @@ import React, {
 import PropTypes from "prop-types";
 import TileModalChild from "./TileModalChild";
 import "./styles.css";
+import { toNumber } from "../../utils";
 
 function ModalContainer({
 	showModal,
@@ -56,7 +57,7 @@ function ModalContainer({
 					tabIndex={0}
 				>
 					<TileModalChild
-						contentId={contentId}
+						contentId={toNumber(contentId)}
 						closeModal={closeModalIcon}
 					/>
 					<div />

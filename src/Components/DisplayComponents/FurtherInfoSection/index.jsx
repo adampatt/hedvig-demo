@@ -23,6 +23,7 @@ function FurtherInfoSection({ data }) {
 					{displayData.map((d, index) => (
 						<FurtherInfoContent
 							rowDirection={index % 2 === 0}
+							key={d.id}
 						>
 							<HalfWidthContainer>
 								<FurtherInfoText>
@@ -57,7 +58,7 @@ function FurtherInfoSection({ data }) {
 }
 
 FurtherInfoSection.propTypes = {
-	data: PropTypes.arrayOf().isRequired,
+	data: PropTypes.instanceOf(Array).isRequired,
 };
 
 export default FurtherInfoSection;

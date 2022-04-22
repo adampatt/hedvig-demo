@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from "react";
 import PropTypes from "prop-types";
 import LazyLoad from "react-lazyload";
@@ -22,10 +23,10 @@ function InfoSection({ data }) {
 				<HalfWidthContainer>
 					<InfoSectionTextContainer>
 						{data.map((d) => (
-							<>
+							<div key={d.id}>
 								<h2>{d.infoTitle}</h2>
 								<p>{d.infoBlurb}</p>
-							</>
+							</div>
 						))}
 						<InfoCopy data={infoDisplayData} />
 						<button type="button">Get a quote</button>
@@ -47,7 +48,7 @@ function InfoSection({ data }) {
 }
 
 InfoSection.propTypes = {
-	data: PropTypes.arrayOf().isRequired,
+	data: PropTypes.instanceOf(Array).isRequired,
 };
 
 export default InfoSection;

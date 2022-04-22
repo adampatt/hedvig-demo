@@ -16,7 +16,7 @@ function About({ data }) {
 			<XlContainer img={backgroundImage}>
 				<AboutSectionContainer>
 					{data.map((d) => (
-						<AboutDataContainer>
+						<AboutDataContainer key={d.id}>
 							<h1>{d.aboutTitle}</h1>
 							<p>{d.aboutCopy}</p>
 							<button type="button">Get a quote</button>
@@ -29,7 +29,7 @@ function About({ data }) {
 }
 
 About.propTypes = {
-	data: PropTypes.arrayOf().isRequired,
+	data: PropTypes.instanceOf(Array).isRequired,
 };
 
 export default About;

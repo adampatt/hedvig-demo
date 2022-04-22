@@ -57,7 +57,7 @@ function TileModalChild({
 				<hr />
 				<ul>
 					{info.subpoint?.map((i) => (
-						<li>{capitalize(i)}</li>
+						<li key={i}>{capitalize(i)}</li>
 					))}
 				</ul>
 			</div>

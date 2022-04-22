@@ -6,7 +6,7 @@ function NavDropdown({ data }) {
 	return (
 		<Container>
 			{data.map((d) => (
-				<li>{d}</li>
+				<li key={d + Math.random()}>{d}</li>
 			))}
 		</Container>
 	);

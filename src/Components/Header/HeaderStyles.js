@@ -5,11 +5,9 @@ export const HeaderContainer = styled.header`
 	flex-direction: row;
 	width: 100%;
 	justify-content: space-between;
-	border: 1px solid red;
-	max-height: 75px;
+	height: 75px;
 	position: fixed;
 	top: 0px;
-	overflow: hidden;
 	color: ${(props) =>
 		props.backGroundColor ? "black" : "white"};
 	background-color: ${(props) =>
@@ -46,6 +44,7 @@ export const Container = styled.ul`
 	li {
 		display: flex;
 		justify-content: center;
+		color: black;
 	}
 `;
 

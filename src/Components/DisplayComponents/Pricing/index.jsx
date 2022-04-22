@@ -21,7 +21,7 @@ function Pricing() {
 		)
 			.then((response) => response.json())
 			.then((data) => setPricingData(data));
-	});
+	}, []);
 
 	return (
 		<SectionContainer

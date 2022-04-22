@@ -43,7 +43,7 @@ function Header() {
 			<NavContainer>
 				<NavList>
 					{navData.map((d) => (
-						<Nav>
+						<Nav key={d.id}>
 							{d.heading}
 							<NavDropdown data={d.list} />
 						</Nav>
