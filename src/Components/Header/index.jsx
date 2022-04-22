@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, {
 	useState,
 	useEffect,
@@ -14,6 +13,21 @@ import {
 
 function Header() {
 	const [navData, setNavData] = useState([]);
+	const [navDis, setNavDis] = useState(false);
+
+	const changeNavBackground = () => {
+		if (window.scrollY >= 60) {
+			setNavDis(true);
+		} else {
+			setNavDis(false);
+		}
+	};
+
+	window.addEventListener(
+		"scroll",
+		changeNavBackground
+	);
+
 	useEffect(() => {
 		fetch(
 			"https://625e9bd83b039517f1f8f2ee.mockapi.io/hedvig-example/navcontent"
@@ -22,7 +36,7 @@ function Header() {
 			.then((data) => setNavData(data));
 	}, []);
 	return (
-		<HeaderContainer>
+		<HeaderContainer backGroundColor={navDis}>
 			<LogoContainer>
 				<h2>Insurance</h2>
 			</LogoContainer>

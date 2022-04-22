@@ -1,7 +1,5 @@
 import styled from "@emotion/styled";
-// import { mq } from "../utils";
 
-// eslint-disable-next-line import/prefer-default-export
 export const HeaderContainer = styled.header`
 	display: flex;
 	flex-direction: row;
@@ -9,6 +7,13 @@ export const HeaderContainer = styled.header`
 	justify-content: space-between;
 	border: 1px solid red;
 	max-height: 75px;
+	position: fixed;
+	top: 0px;
+	overflow: hidden;
+	color: ${(props) =>
+		props.backGroundColor ? "black" : "white"};
+	background-color: ${(props) =>
+		props.backGroundColor ? "white" : "none"}; ;
 `;
 
 export const LogoContainer = styled.div`

@@ -12,6 +12,7 @@
 	opacity: 1;
 	position: fixed;
 	overflow: hidden;
+	left: 0px;
 }
 
 .TileModal {

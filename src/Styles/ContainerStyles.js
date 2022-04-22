@@ -7,6 +7,7 @@ export const SectionContainer = styled.section`
 	width: 100%;
 	justify-content: center;
 	align-items: center;
+	/* padding: 3em 0 3em 0; */
 `;
 
 export const XlContainer = styled.div`
@@ -48,4 +49,6 @@ export const SmallSectionTitle = styled.div`
 export const HalfWidthContainer = styled.div`
 	display: flex;
 	width: 50%;
+	overflow: hidden;
+	justify-content: center;
 `;
