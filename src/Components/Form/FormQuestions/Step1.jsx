@@ -1,51 +1,31 @@
 import React, { useContext } from "react";
-import OrderContext from "../formContext";
+import FormContext from "../formContext";
+import FormInput from "../FormInput";
 
 function Step1() {
 	const {
 		quizState,
-		currentStep,
 		handleNextStep,
 		handleChange,
-	} = useContext(OrderContext);
+	} = useContext(FormContext);
+
+	const step1Names = Object.keys(quizState).slice(
+		0,
+		3
+	);
 
 	return (
 		<>
 			<div>step1</div>
-			<p>{currentStep}</p>
 			<form onSubmit={handleNextStep}>
-				<label htmlFor={quizState.firstName}>
-					Name
-					<input
-						id={quizState.firstName}
-						type="text"
-						name="firstName"
-						value={quizState.firstName}
-						onChange={handleChange}
+				{step1Names.map((question) => (
+					<FormInput
+						name={question}
+						handleChange={handleChange}
 					/>
-				</label>
-				<label htmlFor={quizState.occupation}>
-					Occupation
-					<input
-						id={quizState.occupation}
-						type="text"
-						name="occupation"
-						value={quizState.occupation}
-						onChange={handleChange}
-					/>
-				</label>
-				<label htmlFor={quizState.age}>
-					Age
-					<input
-						id={quizState.age}
-						type="number"
-						name="age"
-						value={quizState.age}
-						onChange={handleChange}
-					/>
-				</label>
+				))}
 				<button type="submit" name="submit">
-					Submit
+					Next
 				</button>
 			</form>
 		</>

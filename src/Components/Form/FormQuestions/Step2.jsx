@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import OrderContext from "../formContext";
+import FormContext from "../formContext";
+import FormInput from "../FormInput";
 
 function Step2() {
 	const {
@@ -7,8 +8,12 @@ function Step2() {
 		handlePrevStep,
 		handleNextStep,
 		handleChange,
-	} = useContext(OrderContext);
+	} = useContext(FormContext);
 
+	const step2Names = Object.keys(quizState).slice(
+		3,
+		5
+	);
 	return (
 		<>
 			<div>step2</div>
@@ -16,28 +21,14 @@ function Step2() {
 				Prev
 			</button>
 			<form onSubmit={handleNextStep}>
-				<label htmlFor={quizState.insuranceType}>
-					Insurance Type
-					<input
-						id={quizState.insuranceType}
-						type="text"
-						name="insuranceType"
-						value={quizState.insuranceType}
-						onChange={handleChange}
+				{step2Names.map((question) => (
+					<FormInput
+						name={question}
+						handleChange={handleChange}
 					/>
-				</label>
-				<label htmlFor={quizState.cover}>
-					Cover type
-					<input
-						id={quizState.cover}
-						type="text"
-						name="cover"
-						value={quizState.cover}
-						onChange={handleChange}
-					/>
-				</label>
+				))}
 				<button type="submit" name="submit">
-					Submit
+					Next
 				</button>
 			</form>
 		</>
