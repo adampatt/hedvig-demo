@@ -1,24 +1,35 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {
+	SectionContainer,
+	XlContainer,
+} from "../../../Styles/ContainerStyles";
+import {
+	AboutSectionContainer,
+	AboutDataContainer,
+} from "./AboutStyles";
 
 function About({ data }) {
+	const backgroundImage = data[0].aboutImg;
 	return (
-		<section className="aboutContainer">
-			<div className="headerContentContainer">
-				{data.map((d) => (
-					<>
-						<h1>{d.aboutTitle}</h1>
-						<p>{d.aboutCopy}</p>
-						<button type="button">Get a quote</button>
-					</>
-				))}
-			</div>
-		</section>
+		<SectionContainer>
+			<XlContainer img={backgroundImage}>
+				<AboutSectionContainer>
+					{data.map((d) => (
+						<AboutDataContainer key={d.id}>
+							<h1>{d.aboutTitle}</h1>
+							<p>{d.aboutCopy}</p>
+							<button type="button">Get a quote</button>
+						</AboutDataContainer>
+					))}
+				</AboutSectionContainer>
+			</XlContainer>
+		</SectionContainer>
 	);
 }
 
 About.propTypes = {
-	data: PropTypes.arrayOf().isRequired,
+	data: PropTypes.instanceOf(Array).isRequired,
 };
 
 export default About;

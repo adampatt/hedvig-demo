@@ -1,0 +1,65 @@
+.modalContent {
+	width: 100vw;
+	height: 100vh;
+	bottom: 0%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	background-color: rgba(0, 0, 0, 0.35);
+	transition: 250ms ease;
+	opacity: 1;
+	position: fixed;
+	overflow: hidden;
+	left: 0px;
+}
+
+.TileModal {
+	border-radius: 2em 2em 0 0;
+	height: 90%;
+	width: 40%;
+	background-color: rgb(250, 250, 250);
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: flex-start;
+}
+
+.TileModalChildHead {
+	display: flex;
+	justify-content: space-between;
+	padding: 5em;
+}
+
+.TileModalChildDetails {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	padding-bottom: 5em;
+}
+
+p {
+	width: 80%;
+}
+
+.TileModalChildList {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+}
+hr {
+	width: 80%;
+}
+
+ul {
+	width: 80%;
+	list-style: none;
+	padding-left: 0px;
+}
+
+li {
+	padding: 1em 0 1em 0;
+}

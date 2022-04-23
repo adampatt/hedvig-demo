@@ -2,6 +2,14 @@ import React, {
 	useEffect,
 	useState,
 } from "react";
+import {
+	SectionContainer,
+	SmallContainer,
+} from "../../../Styles/ContainerStyles";
+import {
+	PricingGrid,
+	PricingContent,
+} from "./PricingStyles";
 
 function Pricing() {
 	const [pricingData, setPricingData] = useState(
@@ -13,21 +21,23 @@ function Pricing() {
 		)
 			.then((response) => response.json())
 			.then((data) => setPricingData(data));
-	});
+	}, []);
 
 	return (
-		// Lilac section, container holds pricing data, div mapped out in grid
-
-		<section>
-			<div className="pricingInfoContainer">
-				{pricingData.map((d) => (
-					<div className="pricingInfo" key={d.id}>
-						<p>{d.pricingSubheading}</p>
-						<h3>{d.pricingDetails}</h3>
-					</div>
-				))}
-			</div>
-		</section>
+		<SectionContainer
+			style={{ backgroundColor: "#d7c6e6" }}
+		>
+			<SmallContainer>
+				<PricingGrid>
+					{pricingData.map((d) => (
+						<PricingContent key={d.id}>
+							<p>{d.pricingSubheading}</p>
+							<h3>{d.pricingDetails}</h3>
+						</PricingContent>
+					))}
+				</PricingGrid>
+			</SmallContainer>
+		</SectionContainer>
 	);
 }
 

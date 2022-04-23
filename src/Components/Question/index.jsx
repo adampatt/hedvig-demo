@@ -2,6 +2,16 @@ import React, {
 	useEffect,
 	useState,
 } from "react";
+import {
+	SectionContainer,
+	SmallContainer,
+	SmallSectionTitle,
+} from "../../Styles/ContainerStyles";
+import {
+	QuestionContentContainer,
+	QuestionInnerContainer,
+	AnswerInnerContainer,
+} from "./QuestionStyles";
 
 function QuestionContainer() {
 	const [question, setQuestion] = useState([]);
@@ -10,11 +20,13 @@ function QuestionContainer() {
 	);
 
 	useEffect(() => {
+		const controller = new AbortController();
 		fetch(
 			"https://625e9bd83b039517f1f8f2ee.mockapi.io/hedvig-example/questions"
 		)
 			.then((response) => response.json())
 			.then((data) => setQuestion(data));
+		return () => controller.abort();
 	}, []);
 
 	const handleClick = (index) => () => {
@@ -25,14 +37,14 @@ function QuestionContainer() {
 	};
 
 	return (
-		<>
-			<div>
-				<h2>common questions and answers</h2>
-			</div>
-			<div className="questionContentContainer">
-				{question.map((q, index) => (
-					<div key={q.id}>
-						<div
+		<SectionContainer>
+			<SmallContainer>
+				<SmallSectionTitle>
+					<h2>Common questions and answers</h2>
+				</SmallSectionTitle>
+				<QuestionContentContainer>
+					{question.map((q, index) => (
+						<QuestionInnerContainer
 							className="questionContainer"
 							key={q.id}
 							onClick={handleClick(index)}
@@ -40,18 +52,18 @@ function QuestionContainer() {
 							role="button"
 							tabIndex={index}
 						>
-							<h1>{q.title}</h1>
+							<h2>{q.title}</h2>
 							<hr />
-						</div>
-						{clickedIndex[index] ? (
-							<div className="answerContainer">
-								<p>{q.answer}</p>
-							</div>
-						) : null}
-					</div>
-				))}
-			</div>
-		</>
+							{clickedIndex[index] ? (
+								<AnswerInnerContainer>
+									<p>{q.answer}</p>
+								</AnswerInnerContainer>
+							) : null}
+						</QuestionInnerContainer>
+					))}
+				</QuestionContentContainer>
+			</SmallContainer>
+		</SectionContainer>
 	);
 }
 

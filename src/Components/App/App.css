@@ -10,6 +10,7 @@ html,
 body {
 	height: 100%;
 	width: 100%;
+	background-color: rgb(250, 250, 250);
 }
 body {
 	line-height: 1.5;
@@ -42,9 +43,3 @@ h6 {
 #__next {
 	isolation: isolate;
 }
-
-/* .aboutContainer {
-	border: 1px solid black;
-	height: 80vh;
-	width: 100%;
-} */

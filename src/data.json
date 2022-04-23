@@ -5,45 +5,65 @@
 		"aboutCopy": "Sit alias nesciunt assumenda dolor alias et. Et dolor dolor aperiam ut placeat rerum ipsa. Non et enim eligendi ab voluptatem. Rerum laboriosam non natus voluptas illum ullam quia dolor tempora. Cum quia sit quo praesentium quas.\n \rEx aut laboriosam quos veritatis et consectetur repudiandae. Est qui et mollitia tenetur eaque distinctio. Voluptas delectus autem. Molestiae a aut dolor. Suscipit expedita molestiae molestiae sint saepe. Eum dolorem sint harum.\n \rDucimus similique vitae voluptatem qui dolor voluptatem porro ipsa molestias. Esse ducimus ea accusamus est earum unde fuga. Qui vero officiis neque facilis aut a aut. Laboriosam quia consequatur. Sed quod explicabo.",
 		"infoTitle": "Est ipsam explicabo",
 		"infoBlurb": "Erum laboriosam non natus voluptas illum ullam quia dolor tempora. Cum quia sit quo praesentium quas. Ex aus.",
+		"infoImage": "https://i.ibb.co/KqvB26H/ben-shanks-f-OFOBKwqdf-A-unsplash.jpg",
+		"infoImageAlt": "Boot of old green car",
 		"infoData": [
 			{
+				"id": 1,
 				"heading": "Eum dolorem sint",
 				"text": "Molestiae a aut dolor. Suscipit expedita molestiae molestiae sint saepe. Eum dolorem sint harum. Ducimus similique vitae voluptatem qui dolor voluptatem porro"
 			},
 			{
+				"id": 2,
 				"heading": "Renetur autem eum",
 				"text": "Erum laboriosam non natus voluptas illum ullam quia dolor tempora. Cum quia sit quo praesentium quas. Ex aus"
 			},
 			{
+				"id": 3,
 				"heading": "Sit alias nesciun",
 				"text": "Molestiae a aut dolor. Suscipit expedita molestiae molestiae sint saepe. Eum dolorem sint harum. Ducimus similique vitae voluptatem qui dolor voluptatem porro"
 			},
 			{
+				"id": 4,
 				"heading": "Sum quia sit quo",
 				"text": "Est qui et mollitia tenetur eaque distinctio. Voluptas delectus autem. Molestiae a aut dolor. Suscipit expedita molestiae molestiae sint saepe. Eum dolorem sint harum.Ducimus similique vitae voluptatem qui dolor voluptatem porro ipsa molestias. Esse ducimus ea accusamus est earum unde fuga."
 			}
 		],
-		"aboutImg": "about-img 1",
+		"aboutImg": "https://i.ibb.co/8r0nqXc/green-car.png",
+		"aboutImgAlt": "Green car",
 		"furtherInfo": [
 			{
+				"id": 1,
 				"heading": "Eum dolorem sint",
-				"text": "Molestiae a aut dolor. Suscipit expedita molestiae molestiae sint saepe. Eum dolorem sint harum. Ducimus similique vitae voluptatem qui dolor voluptatem porro"
+				"text": "Molestiae a aut dolor. Suscipit expedita molestiae molestiae sint saepe. Eum dolorem sint harum. Ducimus similique vitae voluptatem qui dolor voluptatem porro",
+				"img": "https://i.ibb.co/pyGwTXD/portrait1.png",
+				"alt": "Old car grey car "
 			},
 			{
+				"id": 2,
 				"heading": "Renetur autem eum",
-				"text": "Erum laboriosam non natus voluptas illum ullam quia dolor tempora. Cum quia sit quo praesentium quas. Ex aus"
+				"text": "Erum laboriosam non natus voluptas illum ullam quia dolor tempora. Cum quia sit quo praesentium quas. Ex aus",
+				"img": "https://i.ibb.co/86m4cWx/portrait2.png",
+				"alt": "Inside of old car"
 			},
 			{
+				"id": 3,
 				"heading": "Sit alias nesciun",
-				"text": "Molestiae a aut dolor. Suscipit expedita molestiae molestiae sint saepe. Eum dolorem sint harum. Ducimus similique vitae voluptatem qui dolor voluptatem porro"
+				"text": "Molestiae a aut dolor. Suscipit expedita molestiae molestiae sint saepe. Eum dolorem sint harum. Ducimus similique vitae voluptatem qui dolor voluptatem porro",
+				"img": "https://i.ibb.co/5YZh0qX/portrait3.png",
+				"alt": "Two women sitting in the boot of an old car"
 			},
 			{
+				"id": 4,
 				"heading": "Sum quia sit quo",
-				"text": "Est qui et mollitia tenetur eaque distinctio. Voluptas delectus autem. Molestiae a aut dolor. Suscipit expedita molestiae molestiae sint saepe. Eum dolorem sint harum.Ducimus similique vitae voluptatem qui dolor voluptatem porro ipsa molestias. Esse ducimus ea accusamus est earum unde fuga."
+				"text": "Est qui et mollitia tenetur eaque distinctio. Voluptas delectus autem. Molestiae a aut dolor. Suscipit expedita molestiae molestiae sint saepe. Eum dolorem sint harum.Ducimus similique vitae voluptatem qui dolor voluptatem porro ipsa molestias. Esse ducimus ea accusamus est earum unde fuga.",
+				"img": "https://i.ibb.co/x64wzNn/portrait4.png",
+				"alt": "old silver car driving down country road"
 			}
 		],
 		"footerContent": [
 			{
+				"id": 1,
 				"heading": "Lorem",
 				"list": [
 					"Lorem ipsum dolor",
@@ -60,6 +80,7 @@
 				]
 			},
 			{
+				"id": 2,
 				"heading": "Ipsum",
 				"list": [
 					"Quisquam",
@@ -73,6 +94,7 @@
 				]
 			},
 			{
+				"id": 3,
 				"heading": "Dolorem",
 				"list": [
 					"Consectetur adipisicing",
@@ -89,6 +111,7 @@
 				]
 			},
 			{
+				"id": 4,
 				"heading": "Elit",
 				"list": [
 					"Molestiae a aut",
