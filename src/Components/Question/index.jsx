@@ -20,11 +20,13 @@ function QuestionContainer() {
 	);
 
 	useEffect(() => {
+		const controller = new AbortController();
 		fetch(
 			"https://625e9bd83b039517f1f8f2ee.mockapi.io/hedvig-example/questions"
 		)
 			.then((response) => response.json())
 			.then((data) => setQuestion(data));
+		return () => controller.abort();
 	}, []);
 
 	const handleClick = (index) => () => {

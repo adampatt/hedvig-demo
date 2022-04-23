@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -19,9 +18,9 @@ function FormInput({ name, handleChange }) {
 	);
 }
 
-FormInput.protoTypes = {
-	name: PropTypes.string,
-	handleChange: PropTypes.func,
+FormInput.propTypes = {
+	name: PropTypes.string.isRequired,
+	handleChange: PropTypes.func.isRequired,
 };
 
 export default FormInput;

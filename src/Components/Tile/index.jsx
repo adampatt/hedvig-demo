@@ -23,11 +23,13 @@ function Tile() {
 	const [contentId, setContentId] = useState("");
 
 	useEffect(() => {
+		const controller = new AbortController();
 		fetch(
 			"https://625e9bd83b039517f1f8f2ee.mockapi.io/hedvig-example/modalcontent"
 		)
 			.then((response) => response.json())
 			.then((data) => setInfo(data));
+		return () => controller.abort();
 	}, []);
 
 	const onClickHandler = (id) => {

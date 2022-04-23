@@ -29,11 +29,13 @@ function Header() {
 	);
 
 	useEffect(() => {
+		const controller = new AbortController();
 		fetch(
 			"https://625e9bd83b039517f1f8f2ee.mockapi.io/hedvig-example/navcontent"
 		)
 			.then((response) => response.json())
 			.then((data) => setNavData(data));
+		return () => controller.abort();
 	}, []);
 	return (
 		<HeaderContainer backGroundColor={navDis}>
