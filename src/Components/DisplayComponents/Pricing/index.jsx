@@ -10,6 +10,7 @@ import {
 	PricingGrid,
 	PricingContent,
 } from "./PricingStyles";
+import FadeInSection from "../../FadeInContainer";
 
 function Pricing() {
 	const [pricingData, setPricingData] = useState(
@@ -24,20 +25,23 @@ function Pricing() {
 	}, []);
 
 	return (
-		<SectionContainer
-			style={{ backgroundColor: "#d7c6e6" }}
-		>
-			<SmallContainer>
-				<PricingGrid>
-					{pricingData.map((d) => (
-						<PricingContent key={d.id}>
-							<p>{d.pricingSubheading}</p>
-							<h3>{d.pricingDetails}</h3>
-						</PricingContent>
-					))}
-				</PricingGrid>
-			</SmallContainer>
-		</SectionContainer>
+		<FadeInSection>
+			<SectionContainer
+				style={{ backgroundColor: "#d7c6e6" }}
+			>
+				<SmallContainer>
+					<h2>Lorem Ipsum</h2>
+					<PricingGrid>
+						{pricingData.map((d) => (
+							<PricingContent key={d.id}>
+								<p>{d.pricingSubheading}</p>
+								<h3>{d.pricingDetails}</h3>
+							</PricingContent>
+						))}
+					</PricingGrid>
+				</SmallContainer>
+			</SectionContainer>
+		</FadeInSection>
 	);
 }
 

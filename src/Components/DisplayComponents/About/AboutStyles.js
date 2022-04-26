@@ -15,9 +15,11 @@ export const AboutDataContainer = styled.div`
 	padding-bottom: 3em;
 	h1 {
 		padding: 1em 0 1em 0;
+		color: white;
 	}
 	p {
 		padding: 1em 0 1em 0;
+		color: white;
 	}
 	button {
 		padding: 1em 0 1em 0;

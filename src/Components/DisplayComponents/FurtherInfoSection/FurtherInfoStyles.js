@@ -11,7 +11,7 @@ export const FurtherInfoText = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-content: center;
-	width: 100%;
+	width: 80%%;
 	justify-content: space-evenly;
 	align-items: center;
 	h2 {
@@ -50,7 +50,6 @@ export const ImageContainer = styled.div`
 `;
 
 export const FurtherInfoContent = styled.div`
-	background-color: #f7f7f7;
 	display: flex;
 	min-width: 100%;
 	padding: 3em 0 3em 0;

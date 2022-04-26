@@ -1,9 +1,16 @@
 import React, { useContext } from "react";
 import FormContext from "./formContext";
 import {
-	SectionContainer,
-	HalfWidthContainer,
+	// AnswerTile,
+	FormAnswerContent,
+} from "./FormQuestions/FormStyles";
+import {
+	MediumContainer1,
+	DetailsContainer1,
+	DetailsContainer,
 } from "../../Styles/ContainerStyles";
+import { ThirtyPercent } from "../../constants";
+import { capitalize } from "../../utils";
 
 function FormAnswer() {
 	const { currentStep, quizState, wasSubmitted } =
@@ -15,7 +22,7 @@ function FormAnswer() {
 
 	const step3Answers = Object.keys(
 		quizState
-	).slice(0, 5);
+	).slice(3, 5);
 
 	const allAnswers = Object.keys(quizState);
 
@@ -24,29 +31,62 @@ function FormAnswer() {
 			case 0:
 				return null;
 			case 1:
-				return step2Answers.map((name) => (
-					<p>Answer {quizState[name]}</p>
-				));
+				return (
+					<DetailsContainer1 height={ThirtyPercent}>
+						<FormAnswerContent>
+							{step2Answers.map((name) => (
+								<p>
+									{capitalize(name)}: {quizState[name]}
+								</p>
+							))}
+						</FormAnswerContent>
+					</DetailsContainer1>
+				);
+
 			case 2:
-				return step3Answers.map((name) => (
-					<p>Answer {quizState[name]}</p>
-				));
+				return (
+					<>
+						<DetailsContainer1 height={ThirtyPercent}>
+							<FormAnswerContent>
+								{step2Answers.map((name) => (
+									<p>
+										{capitalize(name)}:{quizState[name]}
+									</p>
+								))}
+							</FormAnswerContent>
+						</DetailsContainer1>
+						<DetailsContainer1 height={ThirtyPercent}>
+							<FormAnswerContent>
+								{step3Answers.map((name) => (
+									<p>
+										{capitalize(name)}:{quizState[name]}
+									</p>
+								))}
+							</FormAnswerContent>
+						</DetailsContainer1>
+					</>
+				);
 			default:
 				return null;
 		}
 	};
+
 	return (
-		<SectionContainer>
-			<HalfWidthContainer>
-				<div>FormAnswer</div>
-				<p>{formAnswerDisplay(currentStep)}</p>
-				{wasSubmitted
-					? allAnswers.map((name) => (
-							<p>{quizState[name]}</p>
-					  ))
-					: null}
-			</HalfWidthContainer>
-		</SectionContainer>
+		<MediumContainer1>
+			{wasSubmitted ? (
+				<>
+					<h2>Your answers</h2>
+					{allAnswers.map((name) => (
+						<DetailsContainer>
+							{name}: {quizState[name]}
+						</DetailsContainer>
+					))}
+				</>
+			) : null}
+			{currentStep === 0
+				? null
+				: formAnswerDisplay(currentStep)}
+		</MediumContainer1>
 	);
 }
 

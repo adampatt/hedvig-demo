@@ -11,3 +11,6 @@ export const FlexRowDisplay = [
 	"row-reverse",
 	"row",
 ];
+
+export const TwentyPercent = "20%";
+export const ThirtyPercent = "30%";

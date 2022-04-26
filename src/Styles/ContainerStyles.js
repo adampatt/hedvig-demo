@@ -7,7 +7,8 @@ export const SectionContainer = styled.section`
 	width: 100%;
 	justify-content: center;
 	align-items: center;
-	/* padding: 3em 0 3em 0; */
+	padding: ${(props) =>
+		props.noPadding ? "" : "3em 0 3em 0"};
 `;
 
 export const XlContainer = styled.div`
@@ -29,6 +30,11 @@ export const LargeContainer = styled.div`
 
 export const SmallContainer = styled.div`
 	width: 40%;
+	display: flex;
+	flex-direction: column;
+	h2 {
+		align-self: center;
+	}
 	${mq.lg} {
 		width: 50%;
 	}
@@ -52,3 +58,44 @@ export const HalfWidthContainer = styled.div`
 	overflow: hidden;
 	justify-content: center;
 `;
+
+export const MediumContainer = styled.div`
+	display: flex;
+	width: 80%;
+	flex-direction: column;
+	justify-content: center;
+`;
+
+export const MediumContainer1 = styled.div`
+	display: flex;
+	width: 80%;
+	flex-direction: column;
+	justify-content: space-evenly;
+	padding-top: 3em;
+`;
+
+export const DetailsContainer = styled.div(
+	{
+		display: "flex",
+		width: "100%",
+		padding: "1.25rem",
+	},
+	(props) => ({
+		height: props.height,
+		justifyContent: props.justifyContent,
+	})
+);
+
+export const DetailsContainer1 = styled.div(
+	{
+		display: "flex",
+		width: "80%",
+		padding: "1.25rem",
+		borderRadius: "0.5rem",
+		backgroundColor: "rgb(239, 239, 239)",
+	},
+	(props) => ({
+		height: props.height,
+		justifyContent: props.justifyContent,
+	})
+);

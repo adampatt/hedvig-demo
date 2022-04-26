@@ -2,6 +2,8 @@ import React, {
 	useState,
 	useEffect,
 } from "react";
+import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 import NavDropdown from "./NavDropdown";
 import {
 	HeaderContainer,
@@ -11,12 +13,17 @@ import {
 	Nav,
 } from "./HeaderStyles";
 
-function Header() {
+function Header({ displayHeader }) {
 	const [navData, setNavData] = useState([]);
 	const [navDis, setNavDis] = useState(false);
+	const navigate = useNavigate();
+	const changeBackGroundProp = displayHeader;
 
 	const changeNavBackground = () => {
-		if (window.scrollY >= 60) {
+		if (
+			window.scrollY >= 60 ||
+			changeBackGroundProp
+		) {
 			setNavDis(true);
 		} else {
 			setNavDis(false);
@@ -39,7 +46,11 @@ function Header() {
 	}, []);
 	return (
 		<HeaderContainer backGroundColor={navDis}>
-			<LogoContainer>
+			<LogoContainer
+				onClick={() => {
+					navigate(`/`);
+				}}
+			>
 				<h2>Insurance</h2>
 			</LogoContainer>
 			<NavContainer>
@@ -56,4 +67,11 @@ function Header() {
 	);
 }
 
+Header.defaultProps = {
+	displayHeader: false,
+};
+
+Header.propTypes = {
+	displayHeader: PropTypes.bool,
+};
 export default Header;

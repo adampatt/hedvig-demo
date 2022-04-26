@@ -10,10 +10,9 @@ import {
 } from "./TileStyles";
 import {
 	SmallSectionTitle,
-	SectionContainer,
 	SmallContainer,
 } from "../../Styles/ContainerStyles";
-
+import FadeInSection from "../FadeInContainer";
 import { toNumber } from "../../utils";
 
 function Tile() {
@@ -38,7 +37,7 @@ function Tile() {
 	};
 
 	return (
-		<SectionContainer>
+		<FadeInSection>
 			<SmallContainer>
 				<SmallSectionTitle>
 					<h2>
@@ -66,7 +65,7 @@ function Tile() {
 					/>
 				) : null}
 			</SmallContainer>
-		</SectionContainer>
+		</FadeInSection>
 	);
 }
 

@@ -11,8 +11,11 @@ import MultiStepForm from "./MultiStepForm";
 import FormAnswer from "./FormAnswer";
 import {
 	SectionContainer,
-	XlContainer,
+	LargeContainer,
+	HalfWidthContainer,
 } from "../../Styles/ContainerStyles";
+import Header from "../Header";
+import Footer from "../Footer";
 
 const initialQuizState = {
 	firstName: "",
@@ -35,6 +38,7 @@ function QuizContainer() {
 	const [wasSubmitted, setWasSubmitted] =
 		useState(false);
 
+	const [displayHeader] = useState(true);
 	useEffect(() => {
 		const quizData = JSON.parse(
 			localStorage.getItem("QuizState")
@@ -82,25 +86,33 @@ function QuizContainer() {
 	];
 
 	return (
-		<FormContext.Provider
-			value={{
-				quizState,
-				currentStep,
-				handleChange,
-				handleNextStep,
-				handlePrevStep,
-				formSteps,
-				handleSubmit,
-				wasSubmitted,
-			}}
-		>
-			<SectionContainer>
-				<XlContainer>
-					<MultiStepForm />
-					<FormAnswer />
-				</XlContainer>
-			</SectionContainer>
-		</FormContext.Provider>
+		<>
+			<FormContext.Provider
+				value={{
+					quizState,
+					currentStep,
+					handleChange,
+					handleNextStep,
+					handlePrevStep,
+					formSteps,
+					handleSubmit,
+					wasSubmitted,
+				}}
+			>
+				<Header displayHeader={displayHeader} />
+				<SectionContainer>
+					<LargeContainer>
+						<HalfWidthContainer>
+							<MultiStepForm />
+						</HalfWidthContainer>
+						<HalfWidthContainer>
+							<FormAnswer />
+						</HalfWidthContainer>
+					</LargeContainer>
+				</SectionContainer>
+			</FormContext.Provider>
+			<Footer />
+		</>
 	);
 }
 
