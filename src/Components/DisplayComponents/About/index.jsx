@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 import {
 	SectionContainer,
 	XlContainer,
@@ -8,18 +9,26 @@ import {
 	AboutSectionContainer,
 	AboutDataContainer,
 } from "./AboutStyles";
+import { Button } from "../../Button";
 
 function About({ data }) {
+	const navigate = useNavigate();
 	const backgroundImage = data[0].aboutImg;
 	return (
-		<SectionContainer>
+		<SectionContainer noPadding>
 			<XlContainer img={backgroundImage}>
 				<AboutSectionContainer>
 					{data.map((d) => (
 						<AboutDataContainer key={d.id}>
 							<h1>{d.aboutTitle}</h1>
 							<p>{d.aboutCopy}</p>
-							<button type="button">Get a quote</button>
+							<Button
+								onClick={() => {
+									navigate(`/quote`);
+								}}
+							>
+								Get a quote
+							</Button>
 						</AboutDataContainer>
 					))}
 				</AboutSectionContainer>

@@ -1,6 +1,10 @@
 import React, { useContext } from "react";
 import FormContext from "../formContext";
 import FormInput from "../FormInput";
+import { FormContainer } from "./FormStyles";
+import { DetailsContainer } from "../../../Styles/ContainerStyles";
+import { TwentyPercent } from "../../../constants";
+import { OutlinedButton } from "../../Button";
 
 function Step2() {
 	const {
@@ -14,24 +18,43 @@ function Step2() {
 		3,
 		5
 	);
+
 	return (
-		<>
-			<div>step2</div>
-			<button type="button" onClick={handlePrevStep}>
-				Prev
-			</button>
-			<form onSubmit={handleNextStep}>
-				{step2Names.map((question) => (
+		<FormContainer onSubmit={handleNextStep}>
+			<DetailsContainer
+				height={TwentyPercent}
+				justifyContent="center"
+			>
+				<h1>Insurance Type</h1>
+			</DetailsContainer>
+
+			{step2Names.map((question) => (
+				<DetailsContainer height={TwentyPercent}>
 					<FormInput
 						name={question}
 						handleChange={handleChange}
 					/>
-				))}
-				<button type="submit" name="submit">
+				</DetailsContainer>
+			))}
+			<DetailsContainer
+				height={TwentyPercent}
+				justifyContent="space-evenly"
+			>
+				<OutlinedButton
+					type="button"
+					onClick={handlePrevStep}
+				>
+					Prev
+				</OutlinedButton>
+				<OutlinedButton
+					type="submit"
+					name="submit"
+					onClick={handleNextStep}
+				>
 					Next
-				</button>
-			</form>
-		</>
+				</OutlinedButton>
+			</DetailsContainer>
+		</FormContainer>
 	);
 }
 

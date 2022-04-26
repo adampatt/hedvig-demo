@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import LazyLoad from "react-lazyload";
 import {
-	SectionContainer,
 	LargeContainer,
 	HalfWidthContainer,
 } from "../../../Styles/ContainerStyles";
@@ -13,11 +12,12 @@ import {
 	ImageContainer,
 	FurtherInfoContent,
 } from "./FurtherInfoStyles";
+import FadeInSection from "../../FadeInContainer";
 
 function FurtherInfoSection({ data }) {
 	const displayData = data[0].furtherInfo;
 	return (
-		<SectionContainer>
+		<FadeInSection>
 			<LargeContainer>
 				<FurtherInfoContainer>
 					{displayData.map((d, index) => (
@@ -53,7 +53,7 @@ function FurtherInfoSection({ data }) {
 					))}
 				</FurtherInfoContainer>
 			</LargeContainer>
-		</SectionContainer>
+		</FadeInSection>
 	);
 }
 

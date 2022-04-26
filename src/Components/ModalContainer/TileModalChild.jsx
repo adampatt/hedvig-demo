@@ -4,6 +4,17 @@ import React, {
 } from "react";
 import PropTypes from "prop-types";
 import { capitalize } from "../../utils";
+import {
+	Button,
+	OutlinedButton,
+} from "../Button";
+import {
+	TileModalHolder,
+	TileModalButtonContainer,
+	TileModalChildHead,
+	TileModalChildDetails,
+	TileModalChildList,
+} from "./ModalStyles";
 
 function TileModalChild({
 	contentId,
@@ -29,39 +40,40 @@ function TileModalChild({
 	}, [updatedContentId]);
 
 	return (
-		<div className="TileModal">
-			<button type="button" onClick={closeModal}>
-				CLOSE
-			</button>
-			<div className="TileModalChildHead">
-				<button
-					type="button"
+		<TileModalHolder>
+			<TileModalButtonContainer>
+				<OutlinedButton onClick={closeModal}>
+					{"  X   "}
+				</OutlinedButton>
+			</TileModalButtonContainer>
+
+			<TileModalChildHead>
+				<Button
 					onClick={decrementContentId}
 					disabled={updatedContentId === 1}
 				>
-					left
-				</button>
+					{"<--- Left"}
+				</Button>
 				<h2>{capitalize(info.title)}</h2>
-				<button
-					type="button"
+				<Button
 					onClick={incrementContentId}
 					disabled={updatedContentId === 20}
 				>
-					right
-				</button>
-			</div>
-			<div className="TileModalChildDetails">
+					{"Right ---> "}
+				</Button>
+			</TileModalChildHead>
+			<TileModalChildDetails>
 				<p>{info.text}</p>
-			</div>
-			<div className="TileModalChildList">
+			</TileModalChildDetails>
+			<TileModalChildList>
 				<hr />
 				<ul>
 					{info.subpoint?.map((i) => (
 						<li key={i}>{capitalize(i)}</li>
 					))}
 				</ul>
-			</div>
-		</div>
+			</TileModalChildList>
+		</TileModalHolder>
 	);
 }
 

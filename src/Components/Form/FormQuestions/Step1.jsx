@@ -1,6 +1,10 @@
 import React, { useContext } from "react";
 import FormContext from "../formContext";
 import FormInput from "../FormInput";
+import { FormContainer } from "./FormStyles";
+import { DetailsContainer } from "../../../Styles/ContainerStyles";
+import { TwentyPercent } from "../../../constants";
+import { OutlinedButton } from "../../Button";
 
 function Step1() {
 	const {
@@ -15,20 +19,38 @@ function Step1() {
 	);
 
 	return (
-		<>
-			<div>step1</div>
-			<form onSubmit={handleNextStep}>
-				{step1Names.map((question) => (
+		<FormContainer onSubmit={handleNextStep}>
+			<DetailsContainer
+				height={TwentyPercent}
+				justifyContent="center"
+			>
+				<h1>Personal Details</h1>
+			</DetailsContainer>
+			{step1Names.map((question) => (
+				<DetailsContainer
+					height={TwentyPercent}
+					key={question}
+				>
 					<FormInput
 						name={question}
 						handleChange={handleChange}
 					/>
-				))}
-				<button type="submit" name="submit">
+				</DetailsContainer>
+			))}
+			<DetailsContainer
+				height={TwentyPercent}
+				justifyContent="center"
+			>
+				<OutlinedButton
+					primary
+					type="submit"
+					name="submit"
+					onClick={handleNextStep}
+				>
 					Next
-				</button>
-			</form>
-		</>
+				</OutlinedButton>
+			</DetailsContainer>
+		</FormContainer>
 	);
 }
 

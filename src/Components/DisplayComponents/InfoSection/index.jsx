@@ -1,10 +1,9 @@
-/* eslint-disable react/no-array-index-key */
 import React from "react";
 import PropTypes from "prop-types";
 import LazyLoad from "react-lazyload";
+import { useNavigate } from "react-router-dom";
 import InfoCopy from "./InfoCopy";
 import {
-	SectionContainer,
 	LargeContainer,
 	HalfWidthContainer,
 } from "../../../Styles/ContainerStyles";
@@ -12,13 +11,16 @@ import {
 	InfoSectionTextContainer,
 	ImageContainer,
 } from "./InfoSectionStyles";
+import { Button } from "../../Button";
+import FadeInSection from "../../FadeInContainer";
 
 function InfoSection({ data }) {
+	const navigate = useNavigate();
 	const infoDisplayData = data[0].infoData;
 	const displayImage = data[0].infoImage;
 
 	return (
-		<SectionContainer>
+		<FadeInSection>
 			<LargeContainer>
 				<HalfWidthContainer>
 					<InfoSectionTextContainer>
@@ -29,7 +31,14 @@ function InfoSection({ data }) {
 							</div>
 						))}
 						<InfoCopy data={infoDisplayData} />
-						<button type="button">Get a quote</button>
+						<Button
+							onClick={() => {
+								navigate(`/quote`);
+							}}
+							width="30"
+						>
+							Get a quote
+						</Button>
 					</InfoSectionTextContainer>
 				</HalfWidthContainer>
 				<HalfWidthContainer>
@@ -43,7 +52,7 @@ function InfoSection({ data }) {
 					</LazyLoad>
 				</HalfWidthContainer>
 			</LargeContainer>
-		</SectionContainer>
+		</FadeInSection>
 	);
 }
 

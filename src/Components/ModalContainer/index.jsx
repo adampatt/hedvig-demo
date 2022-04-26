@@ -5,8 +5,8 @@ import React, {
 } from "react";
 import PropTypes from "prop-types";
 import TileModalChild from "./TileModalChild";
-import "./styles.css";
 import { toNumber } from "../../utils";
+import { ModalContent } from "./ModalStyles";
 
 function ModalContainer({
 	showModal,
@@ -48,10 +48,9 @@ function ModalContainer({
 		<>
 			<h1>Modal </h1>
 			{showModal ? (
-				<div
+				<ModalContent
 					ref={modalRef}
 					onClick={closeModal}
-					className="modalContent"
 					onKeyDown={closeModal}
 					role="button"
 					tabIndex={0}
@@ -60,8 +59,7 @@ function ModalContainer({
 						contentId={toNumber(contentId)}
 						closeModal={closeModalIcon}
 					/>
-					<div />
-				</div>
+				</ModalContent>
 			) : null}
 		</>
 	);

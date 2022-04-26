@@ -10,8 +10,10 @@ import {
 import {
 	QuestionContentContainer,
 	QuestionInnerContainer,
+	QuestionInnerTitleContent,
 	AnswerInnerContainer,
 } from "./QuestionStyles";
+import { capitalize } from "../../utils";
 
 function QuestionContainer() {
 	const [question, setQuestion] = useState([]);
@@ -52,7 +54,11 @@ function QuestionContainer() {
 							role="button"
 							tabIndex={index}
 						>
-							<h2>{q.title}</h2>
+							<QuestionInnerTitleContent>
+								<h2>{capitalize(q.title)}</h2>
+								<h2>X</h2>
+							</QuestionInnerTitleContent>
+
 							<hr />
 							{clickedIndex[index] ? (
 								<AnswerInnerContainer>
