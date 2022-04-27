@@ -19,7 +19,7 @@ export const ModalContent = styled.div`
 
 export const TileModalHolder = styled.div`
 	border-radius: 2em 2em 0 0;
-	height: 90%;
+	height: fit-content;
 	width: 40%;
 	background-color: rgb(250, 250, 250);
 	display: flex;
