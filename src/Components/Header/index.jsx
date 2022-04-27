@@ -12,10 +12,14 @@ import {
 	NavList,
 	Nav,
 } from "./HeaderStyles";
+import HamburgerMenu from "./HamburgerMenu";
 
 function Header({ displayHeader }) {
 	const [navData, setNavData] = useState([]);
 	const [navDis, setNavDis] = useState(false);
+	const [hamburgerOpen, setHamburgerOpen] =
+		useState(false);
+
 	const navigate = useNavigate();
 	const changeBackGroundProp = displayHeader;
 
@@ -35,6 +39,10 @@ function Header({ displayHeader }) {
 		changeNavBackground
 	);
 
+	const toggleHamburger = () => {
+		setHamburgerOpen(!hamburgerOpen);
+	};
+
 	useEffect(() => {
 		const controller = new AbortController();
 		fetch(
@@ -44,8 +52,15 @@ function Header({ displayHeader }) {
 			.then((data) => setNavData(data));
 		return () => controller.abort();
 	}, []);
+
 	return (
 		<HeaderContainer backGroundColor={navDis}>
+			<HamburgerMenu
+				toggleHamburger={toggleHamburger}
+				hamburgerDisplay={hamburgerOpen}
+				navData={navData}
+				barColor={navDis}
+			/>
 			<LogoContainer
 				onClick={() => {
 					navigate(`/`);
