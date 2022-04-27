@@ -43,9 +43,10 @@ export const TileModalChildHead = styled.div`
 
 export const TileModalChildDetails = styled.div`
 	display: flex;
-	width: 100%;
+	width: 80%;
 	justify-content: center;
 	padding-bottom: 5em;
+	align-self: center;
 `;
 
 export const TileModalChildList = styled.div`
